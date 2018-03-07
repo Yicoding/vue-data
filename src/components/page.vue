@@ -23,6 +23,7 @@ export default {
     created() {
         // console.log(this.$route.query.page)
         console.log(this.$route.params.page)
+        console.log('aa')
     },
     methods: {
         jump() {
