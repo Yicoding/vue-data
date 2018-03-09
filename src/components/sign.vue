@@ -9,6 +9,7 @@
 	</div>
     <el-button @click="clear" type="danger" size="small">清除签名</el-button>
     <el-button @click="save" type="primary" size="small">保存</el-button>
+    <div class="div-top"></div>
     <img :src="png">
   </div>
 </template>

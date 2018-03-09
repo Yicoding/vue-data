@@ -5,21 +5,24 @@ import index from 'components/index'
 import sign from 'components/sign'
 import calendar from 'components/calendar'
 import page from 'components/page'
+import picture from 'components/picture'
 
 // // 路由懒加载
 // const index = () => import('components/index')
 // const sign = () => import('components/sign')
 // const calendar = () => import('components/calendar')
 // const page = () => import('components/page')
+// const picture = () => import('components/picture')
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
-    { path: '/', component: index },
+    { path: '/', redirect: '/index' },
     { path: '/index', component: index },
     { path: '/sign', component: sign },
     { path: '/calendar', component: calendar },
     { path: '/page/:page', name: 'page', component: page },
+    { path: '/picture', component: picture },
   ]
 })

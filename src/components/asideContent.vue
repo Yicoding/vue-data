@@ -19,9 +19,10 @@ export default {
         return {
             menuList: [
                 { index: '/index', icon: 'el-icon-menu', name: '主页' },
-                { index: '/sign', icon: 'el-icon-document', name: '签名' },
-                { index: '/calendar', icon: 'el-icon-setting', name: '日历' },
-                { index: '/page/1', icon: 'el-icon-setting', name: '页码' }
+                { index: '/sign', icon: 'el-icon-edit', name: '签名' },
+                { index: '/calendar', icon: 'el-icon-date', name: '日历' },
+                { index: '/page/1', icon: 'el-icon-printer', name: '页码' },
+                { index: '/picture', icon: 'el-icon-picture', name: '图片' },
             ]
         }
     },

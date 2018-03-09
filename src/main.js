@@ -16,6 +16,10 @@ Vue.use(ElementUI)
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css' // css部分
 Vue.use(MintUI)
+// 引入weui(使用h5拍照上传功能)
+import 'weui';
+import weui from 'weui.js';
+Vue.prototype.weui = weui
 // 解决浏览器不支持promise语法(针对axios封装的ajax请求低版本浏览器不支持promise语法)
 import _promise from 'es6-promise'
 _promise.polyfill()
