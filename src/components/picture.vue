@@ -21,7 +21,7 @@
               </div>
           </div>
       </div>
-  </div>
+    </div>
   </div>
 </template>
 
@@ -29,72 +29,132 @@
 export default {
   data () {
     return {
-      uploadList: null,
       idArr: [],
     }
   },
   created() {
-    for (let i = 0; i < 5; i ++) {
-      let uploader = `uploader${i}`
-      let uploaderFiles = `uploaderFiles${i}`
-      this.idArr.push({uploader: uploader, uploaderFiles: uploaderFiles})
-    }
+    setTimeout(() => {
+      for (let i = 0; i < 5; i ++) {
+        let uploader = `uploader${i}`
+        let uploaderFiles = `uploaderFiles${i}`
+        this.idArr.push({uploader: uploader, uploaderFiles: uploaderFiles})
+      }
+    },500)
   },
-  mounted() {
-    this.$nextTick(() => {
-      /* 图片自动上传 */
-      let vm = this
-      this.idArr.forEach((todo) => {
-        console.log(todo.uploader)
-        this.weui.uploader(`#${todo.uploader}`, {
-          url: 'http://192.168.10.239:9000/edit/img/upload',
-          auto: true,
-          type: 'file',
-          fileVal: 'file',
-          compress: {
-            // width: 1600,
-            // height: 1600,
-            quality: .5 // .5大概100K+   .8大概300K+   .1大概40K+
-          },
-          // compress: false,
-          onSuccess: function (ret) {
-            console.log(this, ret);
-          },
-          onError: function(err){
-            console.log(this, err);
-          }
-        });
-      })
-      // 缩略图预览
-      this.idArr.forEach((todo) => {
-        console.log(todo.uploaderFiles)
-        document.getElementById(todo.uploaderFiles).addEventListener('click', function(e){
-          console.log('click')
-          var target = e.target;
-
-          while(!target.classList.contains('weui-uploader__file') && target){
-            target = target.parentNode;
-          }
-          if(!target) return;
-
-          var url = target.getAttribute('style') || '';
-
-          if(url){
-            url = url.match(/url\((.*?)\)/)[1].replace(/"/g, '');
-          }
-          var gallery = vm.weui.gallery(url, {
-            onDelete: function(){
-              vm.weui.confirm('确定删除该图片？', function(){
-                target.remove();
-                gallery.hide();
-                vm.uploadList = null
-              });
+  watch: {
+    idArr() {
+      this.$nextTick(() => {
+          /* 图片自动上传 */
+        let vm = this
+        this.idArr.forEach((todo) => {
+          console.log(todo.uploader)
+          this.weui.uploader(`#${todo.uploader}`, {
+            // url: 'http://192.168.10.238:9000/edit/img/upload',
+            url: '/edit/img/upload',
+            auto: true,
+            type: 'file',
+            fileVal: 'file',
+            compress: {
+              // width: 1600,
+              // height: 1600,
+              // quality: .5 // .5大概100K+   .8大概300K+   .1大概40K+
+              quality: .5 // .5大概100K+   .8大概300K+   .1大概40K+
+            },
+            // compress: false,
+            onSuccess: function (ret) {
+              console.log(this, ret);
+            },
+            onError: function(err){
+              console.log(this, err);
             }
           });
-        });
+        })
+        // 缩略图预览
+        this.idArr.forEach((todo) => {
+          console.log(todo.uploaderFiles)
+          document.getElementById(todo.uploaderFiles).addEventListener('click', function(e){
+            console.log('click')
+            var target = e.target;
+
+            while(!target.classList.contains('weui-uploader__file') && target){
+              target = target.parentNode;
+            }
+            if(!target) return;
+
+            var url = target.getAttribute('style') || '';
+
+            if(url){
+              url = url.match(/url\((.*?)\)/)[1].replace(/"/g, '');
+            }
+            var gallery = vm.weui.gallery(url, {
+              onDelete: function(){
+                vm.weui.confirm('确定删除该图片？', function(){
+                  target.remove();
+                  gallery.hide();
+                });
+              }
+            });
+          });
+        })
       })
-    })
+    }
   },
+  // mounted() {
+  //   this.$nextTick(() => {
+  //     /* 图片自动上传 */
+  //     let vm = this
+  //     this.idArr.forEach((todo) => {
+  //       console.log(todo.uploader)
+  //       this.weui.uploader(`#${todo.uploader}`, {
+  //         // url: 'http://192.168.10.238:9000/edit/img/upload',
+  //         url: '/edit/img/upload',
+  //         auto: true,
+  //         type: 'file',
+  //         fileVal: 'file',
+  //         compress: {
+  //           // width: 1600,
+  //           // height: 1600,
+  //           // quality: .5 // .5大概100K+   .8大概300K+   .1大概40K+
+  //           quality: .9 // .5大概100K+   .8大概300K+   .1大概40K+
+  //         },
+  //         // compress: false,
+  //         onSuccess: function (ret) {
+  //           console.log(this, ret);
+  //         },
+  //         onError: function(err){
+  //           console.log(this, err);
+  //         }
+  //       });
+  //     })
+  //     // 缩略图预览
+  //     this.idArr.forEach((todo) => {
+  //       console.log(todo.uploaderFiles)
+  //       document.getElementById(todo.uploaderFiles).addEventListener('click', function(e){
+  //         console.log('click')
+  //         var target = e.target;
+
+  //         while(!target.classList.contains('weui-uploader__file') && target){
+  //           target = target.parentNode;
+  //         }
+  //         if(!target) return;
+
+  //         var url = target.getAttribute('style') || '';
+
+  //         if(url){
+  //           url = url.match(/url\((.*?)\)/)[1].replace(/"/g, '');
+  //         }
+  //         var gallery = vm.weui.gallery(url, {
+  //           onDelete: function(){
+  //             vm.weui.confirm('确定删除该图片？', function(){
+  //               target.remove();
+  //               gallery.hide();
+  //             });
+  //           }
+  //         });
+  //       });
+  //     })
+  //   })
+  // },
 }
 </script>
 

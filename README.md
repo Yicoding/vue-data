@@ -2,6 +2,8 @@
 
 > A Vue.js project
 
+在线地址：http://yixiaolin.applinzi.com
+
 ## Build Setup
 
 ``` bash

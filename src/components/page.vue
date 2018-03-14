@@ -44,8 +44,6 @@ export default {
         }
     },
     created() {
-        console.log('change')
-        // this.weui.alert('alert')
         setTimeout(() => {
             this.info = 'two'
             this.lists = [{id: 'a', name: 'aa'}, {id: 'b', name: 'bb'}]

@@ -13,6 +13,10 @@ const portfinder = require('portfinder')
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
 
+const fs = require("fs");
+const multipart = require('connect-multiparty')
+const multipartMiddleware = multipart()
+
 const devWebpackConfig = merge(baseWebpackConfig, {
   module: {
     rules: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap, usePostCSS: true })
@@ -22,6 +26,28 @@ const devWebpackConfig = merge(baseWebpackConfig, {
 
   // these devServer options should be customized in /config/index.js
   devServer: {
+    before(app) {
+      var response;
+      app.post('/edit/img/upload', multipartMiddleware, function(req, res) {
+      	var nowDate = new Date();
+        console.log(req.files.file);  // 上传的文件信息
+        
+        var des_file = "./static/img/" + nowDate.getTime() + req.files.file.originalFilename;
+        fs.readFile( req.files.file.path, function (err, data) {
+          fs.writeFile(des_file, data, function (err) {
+            if( err ){
+              console.log( err );
+            }
+            response = {
+              message:'File uploaded successfully', 
+              filename:nowDate.getTime() + req.files.file.originalFilename
+            }
+            console.log( response.filename );
+            res.status(200).send({filename: response.filename});
+          });
+        });
+      })
+    },
     clientLogLevel: 'warning',
     historyApiFallback: {
       rewrites: [

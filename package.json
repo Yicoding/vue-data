@@ -6,11 +6,12 @@
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
-    "start": "npm run dev",
+    "start": "node app.js",
     "build": "node build/build.js"
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "connect-multiparty": "^2.1.0",
     "echarts": "^4.0.4",
     "element-ui": "^2.2.1",
     "es6-promise": "^4.2.4",

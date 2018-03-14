@@ -20,17 +20,21 @@
       <el-table-column
         prop="name"
         sortable="custom"
+        min-width="120"
         label="站点名">
         <template slot-scope="scope">
-          <el-button type="text" size="small" @click="jump(scope.row.site)">{{scope.row.name}}</el-button>
+          <!-- <el-button type="text" size="small" @click="jump(scope.row.site)">{{scope.row.name}}</el-button> -->
+          <span style="color: #409EFF; cursor: pointer;" @click="jump(scope.row.site)">{{scope.row.name}}</span>
         </template>
       </el-table-column>
       <el-table-column
 	      label="网址"
         sortable="custom"
+        min-width="200"
         prop="site">
 	      <template slot-scope="scope">
-          <el-button type="text" size="small" @click="jump(scope.row.site)">{{scope.row.site}}</el-button>
+          <span style="color: #409EFF; cursor: pointer;" @click="jump(scope.row.site)">{{scope.row.site}}</span>
+          <!-- <el-button type="text" size="small" @click="jump(scope.row.site)">{{scope.row.site}}</el-button> -->
         </template>
 	    </el-table-column>
     </el-table>

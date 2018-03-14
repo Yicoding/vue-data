@@ -5,7 +5,7 @@
       <el-breadcrumb-item>手动签名</el-breadcrumb-item>
     </el-breadcrumb>
     <div style="margin: 10px 0; border: 1px solid #dfdddd; border-radius: 3px;">
-		<vueSignature ref="signature" :sigOption="option" :w="'100%;'" :h="'200px'"></vueSignature>
+		<vueSignature ref="signature" :sigOption="option" :w="'100%;'" :h="'300px'"></vueSignature>
 	</div>
     <el-button @click="clear" type="danger" size="small">清除签名</el-button>
     <el-button @click="save" type="primary" size="small">保存</el-button>
