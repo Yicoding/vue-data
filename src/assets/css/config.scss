@@ -1,0 +1,41 @@
+/*PC端flex布局*/
+$bg-header: #fafafa;
+.box {
+    height: 100vh;
+    display: flex;
+    align-content: stretch;
+    aside {
+        width: 170px;
+        background: #545c64;
+        color: #fff;
+    }
+    .content {
+        flex: 1;
+        height: 100vh;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        header {
+            height: 60px;
+            background-color: $bg-header;
+            display: flex;
+            align-items: center;
+        }
+        section {
+            background: rgba(253, 255, 247, 0.897);
+            flex: 1;
+            padding: 10px;
+            overflow: auto;
+        }
+    }
+}
+/*修改element-ui样式*/
+.el-menu {
+    width: 100%;
+}
+.el-table .cell {
+    text-align: center;
+}
+.el-table td, .el-table th {
+    padding: 0.4em 0;
+}

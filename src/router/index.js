@@ -6,6 +6,7 @@ import sign from 'components/sign'
 import calendar from 'components/calendar'
 import page from 'components/page'
 import picture from 'components/picture'
+import echarts from 'components/echarts'
 
 // // 路由懒加载
 // const index = () => import('components/index')
@@ -24,5 +25,6 @@ export default new Router({
     { path: '/calendar', component: calendar },
     { path: '/page/:page', name: 'page', component: page },
     { path: '/picture', component: picture },
+    { path: '/echarts', component: echarts },
   ]
 })

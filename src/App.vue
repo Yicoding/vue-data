@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import asideContent from 'components/asideContent'
+import asideContent from 'components/aside-content'
 export default {
   components: {
     asideContent

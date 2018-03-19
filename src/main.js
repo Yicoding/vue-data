@@ -29,6 +29,10 @@ import axios from 'axios'
 // 修改vue原型，讲axios配置在vue原型中，在项目中使用this.$http代替axios
 Vue.prototype.$http = axios
 
+// 引入echarts图表
+import echarts from 'echarts'
+Vue.prototype.echarts = echarts
+
 // 全局引入日历组件
 import 'vue-event-calendar/dist/style.css'
 import vueEventCalendar from 'vue-event-calendar'
@@ -36,7 +40,7 @@ import vueEventCalendar from 'vue-event-calendar'
 Vue.use(vueEventCalendar, {locale: 'en'})
 
 // 引入自定义样式
-import 'assets/index.css'
+import 'assets/css/index.scss'
 
 
 // 设置为 false 以阻止 vue 在启动时生成生产提示
