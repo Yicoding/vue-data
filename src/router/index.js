@@ -1,19 +1,20 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// index.vue组件
-import index from 'components/index'
-import sign from 'components/sign'
-import calendar from 'components/calendar'
-import page from 'components/page'
-import picture from 'components/picture'
-import echarts from 'components/echarts'
+// // index.vue组件
+// import index from 'components/index'
+// import sign from 'components/sign'
+// import calendar from 'components/calendar'
+// import page from 'components/page'
+// import picture from 'components/picture'
+// import echarts from 'components/echarts'
 
-// // 路由懒加载
-// const index = () => import('components/index')
-// const sign = () => import('components/sign')
-// const calendar = () => import('components/calendar')
-// const page = () => import('components/page')
-// const picture = () => import('components/picture')
+// 路由懒加载
+const index = () => import('components/index')
+const sign = () => import('components/sign')
+const calendar = () => import('components/calendar')
+const page = () => import('components/page')
+const picture = () => import('components/picture')
+const echarts = () => import('components/echarts')
 
 Vue.use(Router)
 
