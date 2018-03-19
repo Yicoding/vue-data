@@ -45,6 +45,7 @@ export default {
       }
     },
     backToTop() {
+      clearInterval(this.interval)
       this.interval = setInterval(() => {
         var current = this.$refs.section.scrollTop;
         var step = (0 - current) / 10;
@@ -55,7 +56,7 @@ export default {
         }
         this.$refs.section.scrollTop = current
         if (current <= 0) {
-          clearInterval(this.interval);
+          clearInterval(this.interval)
         }
       }, 10)
     },
