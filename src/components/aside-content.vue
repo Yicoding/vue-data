@@ -24,6 +24,7 @@ export default {
                 { index: '/page/1', icon: 'el-icon-printer', name: '页码' },
                 { index: '/picture', icon: 'el-icon-picture', name: '图片' },
                 { index: '/echarts', icon: 'el-icon-tickets', name: '图表' },
+                { index: '/sockjs', icon: 'el-icon-tickets', name: 'sockjs' },
             ]
         }
     },

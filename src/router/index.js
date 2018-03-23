@@ -7,6 +7,7 @@ import Router from 'vue-router'
 // import page from 'components/page'
 // import picture from 'components/picture'
 // import echarts from 'components/echarts'
+// import sock from 'components/sock'
 
 // 路由懒加载
 const index = () => import('components/index')
@@ -15,6 +16,7 @@ const calendar = () => import('components/calendar')
 const page = () => import('components/page')
 const picture = () => import('components/picture')
 const echarts = () => import('components/echarts')
+const sockjs = () => import('components/sockjs')
 
 Vue.use(Router)
 
@@ -27,5 +29,6 @@ export default new Router({
     { path: '/page/:page', name: 'page', component: page },
     { path: '/picture', component: picture },
     { path: '/echarts', component: echarts },
+    { path: '/sockjs', component: sockjs },
   ]
 })

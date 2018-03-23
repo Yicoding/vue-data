@@ -42,7 +42,6 @@ Vue.use(vueEventCalendar, {locale: 'en'})
 // 引入自定义样式
 import 'assets/css/index.scss'
 
-
 // 设置为 false 以阻止 vue 在启动时生成生产提示
 Vue.config.productionTip = false
 
