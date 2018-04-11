@@ -17,6 +17,9 @@ export default {
         content: '基于最新报告期归属母公司股东的净利润与最新总股本计算',
         onOk: () => {
           console.log('ok')
+        },
+        onShow: () => {
+          console.log('show')
         }
       })
     }
