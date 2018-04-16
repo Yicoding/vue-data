@@ -32,7 +32,8 @@ Vue.prototype.$http = axios
 // 引入echarts图表
 import echarts from 'echarts'
 Vue.prototype.echarts = echarts
-
+// 引入Chart.js图表
+import Chart from 'chart.js'
 // 全局引入日历组件
 import 'vue-event-calendar/dist/style.css'
 import vueEventCalendar from 'vue-event-calendar'

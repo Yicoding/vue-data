@@ -26,6 +26,7 @@ export default {
                 { index: '/echarts', icon: 'el-icon-tickets', name: '图表' },
                 { index: '/sockjs', icon: 'el-icon-tickets', name: 'sockjs' },
                 { index: '/modal', icon: 'el-icon-document', name: 'modal' },
+                { index: '/chart', icon: 'el-icon-news', name: 'chart' },
             ]
         }
     },

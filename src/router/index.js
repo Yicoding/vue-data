@@ -9,6 +9,7 @@ import Router from 'vue-router'
 // import echarts from 'components/echarts'
 // import sock from 'components/sock'
 // import modal from 'components/modal'
+// import chart from 'components/chart'
 
 // 路由懒加载
 const index = () => import('components/index')
@@ -19,6 +20,7 @@ const picture = () => import('components/picture')
 const echarts = () => import('components/echarts')
 const sockjs = () => import('components/sockjs')
 const modal = () => import('components/modal')
+const chart = () => import('components/chart')
 
 Vue.use(Router)
 
@@ -33,5 +35,6 @@ export default new Router({
     { path: '/echarts', component: echarts },
     { path: '/sockjs', component: sockjs },
     { path: '/modal', component: modal },
+    { path: '/chart', component: chart },
   ]
 })
