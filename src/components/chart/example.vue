@@ -32,7 +32,7 @@ export default {
                     labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
                     datasets: [{
                         label: '# of Votes',
-                        data: [12, 19, 3, 5, 2, 3],
+                        data: [20322, 22135, 16584, 55648, 9995, 45698],
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',
                             'rgba(54, 162, 235, 0.2)',
@@ -53,6 +53,14 @@ export default {
                     }]
                 },
                 options: {
+                    layout: {
+                        padding: {
+                            left: 0,
+                            right: 0,
+                            top: 0,
+                            bottom: 0
+                        }
+                    },
                     scales: {
                         yAxes: [{
                             ticks: {

@@ -10,7 +10,7 @@
     <el-button @click="send(2)" size="small">参数2</el-button>
     <el-button @click="send(3)" size="small">参数3</el-button>
     <div class="div-top"></div>
-    参数：{{$route.query.page}}
+    参数：<span v-if="$route.query.page">{{$route.query.page}}</span>
     <div class="div-top"></div>
     <el-button size="small" @click="open">打开模态框</el-button>
     <confirm ref="confirm" @confirm="confirmClear" text="即将前往QQ联系客服" confirmBtnText="确定"></confirm>
@@ -231,8 +231,6 @@ export default {
     watch: {
         $route(value) {
             console.log(value)
-            // console.log(value.query.page)
-            // this.page = value.query.page
         }
     },
     created() {
@@ -240,13 +238,17 @@ export default {
             this.info = 'two'
             this.lists = [{id: 'a', name: 'aa'}, {id: 'b', name: 'bb'}]
         },2000)
+        // console.log(this.$route.query.page)
+        console.log(this.$route.query)
+        console.log(JSON.parse(this.$route.query.item))
     },
     methods: {
         jump() {
             this.$router.push({name: 'page', params: {page: 2}})
         },
         send(page) {
-            this.$router.push({path: `/page/${this.$route.params.page}`, query: {page: page}})
+            // this.$router.push({path: `/page/${this.$route.params.page}`, query: {page: page}})
+            this.$router.push({name: 'page', params: {page: this.$route.params.page}, query: {item: JSON.stringify({page: {page: page,name: 'name',obj: {num: 'five'}}})}})
         },
         open() {
             this.$refs.confirm.show()

@@ -27,6 +27,8 @@ export default {
                 { index: '/sockjs', icon: 'el-icon-tickets', name: 'sockjs' },
                 { index: '/modal', icon: 'el-icon-document', name: 'modal' },
                 { index: '/chart', icon: 'el-icon-news', name: 'chart' },
+                { index: '/config', icon: 'el-icon-news', name: 'config' },
+                { index: '/bus', icon: 'el-icon-news', name: 'bus' },
             ]
         }
     },
