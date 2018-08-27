@@ -46,6 +46,14 @@ import 'assets/css/index.scss'
 // 设置为 false 以阻止 vue 在启动时生成生产提示
 Vue.config.productionTip = false
 
+// 自定义指令
+Vue.directive('focus', {
+  inserted: (el) => {
+    el.focus()
+  } 
+})
+
+
 /* eslint-disable no-new */
 // 在js里面，new 一个对象，需要赋值给某个值（变量），用Vue实例化的时候，不需要赋值给值（变量），所以要单独给配一条规则，给new Vue这行代码上面加这个注释，把这行代码规则的校验跳过，通过eslint-disable。eslint的常用技巧之一
 new Vue({

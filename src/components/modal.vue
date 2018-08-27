@@ -2,11 +2,13 @@
   <div>
       <el-button @click="showOne">modalOne</el-button>
       <el-button @click="showTwo">modalTwo</el-button>
+      <el-button @click="showConfirm">showConfirm</el-button>
   </div>
 </template>
 
 <script>
 import MsgBox from './MsgBox'
+import ConfirmComponent from './confirm'
 export default {
   methods: {
     showOne() {
@@ -21,6 +23,11 @@ export default {
         onShow: () => {
           console.log('show')
         }
+      })
+    },
+    showConfirm() {
+      ConfirmComponent({
+        title: 'hi'
       })
     }
   }

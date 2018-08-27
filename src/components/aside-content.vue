@@ -29,6 +29,7 @@ export default {
                 { index: '/chart', icon: 'el-icon-news', name: 'chart' },
                 { index: '/config', icon: 'el-icon-news', name: 'config' },
                 { index: '/bus', icon: 'el-icon-news', name: 'bus' },
+                { index: '/slot', icon: 'el-icon-news', name: 'slot' },
             ]
         }
     },

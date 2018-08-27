@@ -25,6 +25,7 @@ const modal = () => import('components/modal')
 const chart = () => import('components/chart')
 const config = () => import('components/config')
 const bus = () => import('components/bus')
+const slot = () => import('components/slot')
 
 Vue.use(Router)
 
@@ -42,5 +43,6 @@ export default new Router({
     { path: '/chart', component: chart },
     { path: '/config', component: config },
     { path: '/bus', component: bus },
+    { path: '/slot', component: slot },
   ]
 })
