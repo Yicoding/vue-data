@@ -14,8 +14,8 @@ export default {
         }
     },
     created() {
-        bus.$on('busAdd', target=> {
-            this.num = target
+        bus.$on('busAdd', val => {
+            this.num = val
         })
     }
 }

@@ -8,7 +8,7 @@
         <h3 class="h-text">header</h3>
       </header>
       <section ref="section">
-        <router-view :key="$route.path"/>
+        <router-view :key="$route.path" v-transition />
       </section>
       <transition name="fade">
         <div class= "returnTop"  @click="backToTop" v-show="show"></div>

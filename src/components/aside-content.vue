@@ -30,6 +30,9 @@ export default {
                 { index: '/config', icon: 'el-icon-news', name: 'config' },
                 { index: '/bus', icon: 'el-icon-news', name: 'bus' },
                 { index: '/slot', icon: 'el-icon-news', name: 'slot' },
+                { index: '/hander', icon: 'el-icon-news', name: 'hander' },
+                { index: '/swiper', icon: 'el-icon-news', name: 'swiper' },
+                { index: '/password', icon: 'el-icon-news', name: 'password' },
             ]
         }
     },

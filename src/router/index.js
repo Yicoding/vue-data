@@ -26,6 +26,9 @@ const chart = () => import('components/chart')
 const config = () => import('components/config')
 const bus = () => import('components/bus')
 const slot = () => import('components/slot')
+const hander = () => import('components/info/hander')
+const swiper = () => import('components/swiper')
+const password = () => import('components/password')
 
 Vue.use(Router)
 
@@ -44,5 +47,8 @@ export default new Router({
     { path: '/config', component: config },
     { path: '/bus', component: bus },
     { path: '/slot', component: slot },
+    { path: '/hander', component: hander },
+    { path: '/swiper', component: swiper },
+    { path: '/password', component: password },
   ]
 })
