@@ -5,10 +5,12 @@
             <pass-input
                 v-model="password"
                 type="tel"
+                :isShowStar="true"
                 :allowChinese="false"
                 :alloUpcase="false"
                 :alloLowercase="false" />
         </div>
+        <p :class="['a', 'b' + index]" v-for="(item, index) in list" :key="index">{{item}}</p>
     </div>
 </template>
 
@@ -20,7 +22,8 @@ export default {
     },
     data() {
         return{
-            password: ''
+            password: '',
+            list: [1, 2, 3, 4, 5]
         }
     },
     watch: {

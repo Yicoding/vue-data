@@ -1,6 +1,7 @@
 <template>
     <div class="pass-input">
-        <input :type="type" class="password" v-model="password" :maxlength="maxlength" />
+        <input :type="type" class="password" v-model="password" :maxlength="maxlength" ref="input" />
+        <span @click="handleClick" class="mask" v-if="isShowStar"></span>
     </div>
 </template>
 
@@ -51,6 +52,7 @@ export default {
                 this.password = val.slice(0, val.length-1)
                 return
             }
+            
             if (!val) { // 是否清空
                 this.val = ''
                 this.$emit('input', '')
@@ -88,6 +90,13 @@ export default {
                 this.$emit('input', val)
                 return
             }
+            
+            if (val.length == 1) {
+                this.val = val
+                this.password = val.replace(/./g, '*')
+                this.$emit('input', val)
+                return
+            }
             // 显示为*的处理
             if (val.length > this.val.length) {
                 let num = val.length - this.val.length
@@ -116,6 +125,10 @@ export default {
         isLowercase(val) {
             let reg = /[a-z]/g
             return reg.test(val)
+        },
+        // 点击span触发input
+        handleClick() {
+            this.$refs.input.focus()
         }
     }
 }
@@ -125,11 +138,22 @@ export default {
     .pass-input{
         width: 200px;
         height: 30px;
+        position: relative;
     }
     .password{
         height: 30px;
         width: 200px;
         outline: 0;
+    }
+    .mask{
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: 0;
+        z-index: 9;
     }
 </style>
 
