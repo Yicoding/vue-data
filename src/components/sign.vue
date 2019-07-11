@@ -11,14 +11,19 @@
     <el-button @click="save" type="primary" size="small">保存</el-button>
     <div class="div-top"></div>
     <img :src="png">
+    <slotA>
+      <input type="text" v-model="person.name" />
+    </slotA>
   </div>
 </template>
 
 <script>
 import vueSignature from "components/vue-signature"
+import slotA from "components/slot/slotA"
 export default {
     components: {
-		vueSignature
+    vueSignature,
+    slotA
 	},
     data () {
         return {
@@ -26,6 +31,9 @@ export default {
                 penColor:"rgb(0, 0, 0)"
             },
             png: null,
+            person: {
+              name: '222'
+            }
         }
     },
     methods: {

@@ -42,7 +42,7 @@ Vue.use(vueEventCalendar, {locale: 'en'})
 
 // 引入vueg转场动画
 import vueg from 'vueg'
-import 'vueg/css/transition-min.css'
+// import 'vueg/css/transition-min.css'
 const options = {
   duration: '0.3', //转场动画时长，默认为0.3，单位秒
   firstEntryDisable: false, //值为true时禁用首次进入应用时的渐现动画，默认为false
@@ -60,7 +60,7 @@ const options = {
   disable: false, //禁用转场动画，默认为false，嵌套路由默认为true
   nuxt: false //若使用后端渲染框架Nuxt，需要将此设为true，默认为false
 }    
-Vue.use(vueg, router, options) //←注意这一句应该在router实例化之后
+// Vue.use(vueg, router, options) //←注意这一句应该在router实例化之后
 // 引入自定义样式
 import 'assets/css/index.scss'
 
