@@ -27,6 +27,18 @@ $bg-header: #fafafa;
             padding: 10px;
             overflow: auto;
         }
+        footer {
+            height: 70px;
+            line-height: 70px;
+            text-align: center;
+            background: #000;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            a{
+                color: #fff;
+            }
+        }
     }
 }
 /*修改element-ui样式*/

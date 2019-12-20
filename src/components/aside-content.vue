@@ -24,15 +24,9 @@ export default {
                 { index: '/page/1', icon: 'el-icon-printer', name: '页码' },
                 { index: '/picture', icon: 'el-icon-picture', name: '图片' },
                 { index: '/echarts', icon: 'el-icon-tickets', name: '图表' },
-                { index: '/sockjs', icon: 'el-icon-tickets', name: 'sockjs' },
                 { index: '/modal', icon: 'el-icon-document', name: 'modal' },
                 { index: '/chart', icon: 'el-icon-news', name: 'chart' },
-                { index: '/config', icon: 'el-icon-news', name: 'config' },
                 { index: '/bus', icon: 'el-icon-news', name: 'bus' },
-                { index: '/slot', icon: 'el-icon-news', name: 'slot' },
-                { index: '/hander', icon: 'el-icon-news', name: 'hander' },
-                { index: '/swiper', icon: 'el-icon-news', name: 'swiper' },
-                { index: '/password', icon: 'el-icon-news', name: 'password' },
             ]
         }
     },

@@ -10,6 +10,9 @@
       <section ref="section">
         <router-view :key="$route.path" v-transition />
       </section>
+      <footer>
+        <a href="http://www.beian.miit.gov.cn">网站备案号：沪ICP备19044147号-1</a>
+      </footer>
       <transition name="fade">
         <div class= "returnTop"  @click="backToTop" v-show="show"></div>
       </transition>
