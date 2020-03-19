@@ -18,15 +18,16 @@ export default {
     data() {
         return {
             menuList: [
-                { index: '/index', icon: 'el-icon-menu', name: '主页' },
-                { index: '/sign', icon: 'el-icon-edit', name: '签名' },
+                { index: '/book', icon: 'el-icon-menu', name: '主页' },
                 { index: '/calendar', icon: 'el-icon-date', name: '日历' },
-                { index: '/page/1', icon: 'el-icon-printer', name: '页码' },
+                // { index: '/index', icon: 'el-icon-menu', name: '主页' },
+                { index: '/sign', icon: 'el-icon-edit', name: '签名' },
+                // { index: '/page/1', icon: 'el-icon-printer', name: '页码' },
                 { index: '/picture', icon: 'el-icon-picture', name: '图片' },
                 { index: '/echarts', icon: 'el-icon-tickets', name: '图表' },
                 { index: '/modal', icon: 'el-icon-document', name: 'modal' },
                 { index: '/chart', icon: 'el-icon-news', name: 'chart' },
-                { index: '/bus', icon: 'el-icon-news', name: 'bus' },
+                // { index: '/bus', icon: 'el-icon-news', name: 'bus' },
             ]
         }
     },

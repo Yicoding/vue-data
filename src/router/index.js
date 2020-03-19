@@ -16,6 +16,7 @@ import Router from 'vue-router'
 // 路由懒加载
 const index = () => import('components/index')
 const sign = () => import('components/sign')
+const book = () => import('components/book')
 const calendar = () => import('components/calendar')
 const page = () => import('components/page')
 const picture = () => import('components/picture')
@@ -34,7 +35,8 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    { path: '/', redirect: '/index' },
+    { path: '/', redirect: '/book' },
+    { path: '/book', component: book },
     { path: '/index', component: index },
     { path: '/sign', component: sign },
     { path: '/calendar', component: calendar },
